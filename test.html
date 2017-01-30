@@ -1,0 +1,137 @@
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script src="scripts/mapify.js"></script>
+
+
+<div style="width:600px;height:600px;border:10px solid #000;" class="test"></div>
+
+
+<script>
+	var pos1 = {
+		"lat": 49.095651,
+		"lng": 3.59569
+	}
+
+	var pos2 = {
+		"lat": 49.825651,
+		"lng": 2.190569
+	}
+
+	var pos3 = {
+		"lat": 48.895651,
+		"lng": 5.390569
+	}
+
+	var someMarkers = [{
+		title: 'defaultMarker2',
+		icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+		position: pos1
+	},
+	{
+		title: 'defaultMarker3',
+		icon: "",
+		position: pos2
+	},{
+                        title: 'Tre',
+                        icon: '',
+                        position: { lat:39.728404, lng:-105.053238}
+                    },{
+                        title: 'Twieeaf',
+                        icon: '',
+                        position: { lat:38.839797, lng:-104.849788}
+                    },{
+                        title: 'gdom',
+                        icon: '',
+                        position: { lat:32.7484346, lng:-116.9798635}
+                    },{
+                        title: 'Tpia',
+                        icon: '',
+                        position: { lat:47.046125, lng:-122.852595}
+                    },{
+                        title: 'regivers',
+                        icon: '',
+                        position: { lat:39.6833551, lng:-104.8803377}
+                    }];
+
+	var mapSettings = {
+			zoom: 20, // zoom level: 0 - all the way out, 20 - all the way in
+			minZoom: 0, //how far autofitbounds is allowed to zoom out 
+			autoFitBounds: true, //Map will autofit to drawn markers - overrides zoom
+			placeMarkers: false, //marker test mode, place markers by clicking on the map
+			action: "drawMap",  //drawMap or addMarkers
+			markers: [],
+			center: null, //center only gets drawn if the center object is not null, provide position.
+			centerIcon: "", //custom center icon only gets used if you provide an image url
+			centerTitle: "Center",
+			mapTypeId: "roadmap", //roadmap, satellite, hybrid, terrain
+			apiKey: ""
+	}
+
+	$('.test').mapify(mapSettings);
+
+	var pos9 = {
+		"lat": 49.225651,
+		"lng": 2.190569
+	}
+
+	var pos8 = {
+		"lat": 47.005651,
+		"lng": 4.390569
+	}
+
+	var someMarkers2 = [{
+		title: 'defaultMarker23',
+		icon: "http://www.uidownload.com/files/114/780/884/guest-stars-baseball-ringers-roger-clemens-icon.png",
+		position: pos9
+	},
+	{
+		title: 'defaultMarker33',
+		icon: "http://www.subgenius.com/bobapps/dobbs.ico",
+		position: pos8
+	}];
+
+
+
+
+
+	var markers = [{
+                        title: 'Mon',
+                        position: { lat:52.3617302, lng:4.8862889}
+                    },{
+                        title: 'T',
+                        position: { lat:52.3629421, lng:4.885262}
+                    },{
+                        title: 'Cluba',
+                        position: { lat:52.3558038, lng:4.891901}
+                    },{
+                        title: 'Geoa',
+                        position: { lat:52.3746881, lng:4.8888267}
+                    },{
+                        title: 'Cordam',
+                        position: { lat:52.35746, lng:4.9020302}
+                    },{
+                        title: 'Native Rooon',
+                        position: { lat:38.81271, lng:-104.824395}
+                    },{
+                        title: 'MedLoris',
+                        icon: '',
+                        position: { lat:33.782128, lng:-117.243953}
+                    },{
+                        title: 'Df c. ',
+                        icon: '',
+                        position: { lat:38.840022, lng:-104.778255}
+                    }];
+
+
+	var justAddSomeMarkers = {
+		action: "addMarkers",  //drawMap or addMarkers
+		markers: markers,
+	}
+                    	//test adding of markers
+	setTimeout(function() {
+		$('.test').mapify(justAddSomeMarkers);
+	}, 3000);
+	//test redraw
+	// setTimeout(function() {
+	// 	$('.test').mapify(mapSettings);
+	// }, 6000);
+</script>
